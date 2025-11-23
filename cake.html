@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Animated Birthday Cake</title>
+<style>
+/* Basic Page Setup */
+body {
+    background-color: #f7a2a7; /* Changed to a lighter pink */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* A bit more fun font */
+    overflow: hidden; /* Prevent scrollbar during animation */
+}
+
+/* Cake Container (to hold cake and candle together) */
+.cake-container {
+    position: relative; /* Essential for positioning the message and candle */
+    transform: translateY(-300px); /* Initial position for the drop animation */
+    animation: drop 500ms 1s ease-out forwards;
+}
+
+/* Cake (The bread/cream body) */
+.cake {
+    background: #ffffff; /* White cream */
+    border-radius: 10px;
+    width: 150px; /* Made bigger for better visibility */
+    height: 100px;
+    box-shadow: 0 5px 0 #c96, 0 15px 0 #a55; /* Better layer shadow */
+}
+
+/* Cream/Jam Layers */
+.cake::before,
+.cake::after {
+    background: rgba(255, 0, 0, 0.6); /* Red jam/layer */
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 5px; /* Thicker layers */
+    border-radius: 2px;
+}
+
+.cake::before {
+    top: 30px; /* First layer position */
+}
+
+.cake::after {
+    top: 65px; /* Second layer position */
+}
+
+/* Candle */
+.candle {
+    width: 8px; /* Slightly thicker */
+    height: 30px; /* Slightly taller */
+    background: #FFD700;
+    position: absolute;
+    top: -30px; /* Position above the cake */
+    left: calc(50% - 4px); /* Center the candle (half the width of the candle) */
+    border-radius: 2px;
+    animation: flicker 1s infinite alternate;
+    z-index: 10; /* Ensure candle is on top */
+}
+
+/* Drop Animation (Cake falling) */
+@keyframes drop {
+    to {
+        transform: translateY(0); /* Final resting position */
+    }
+}
+
+/* Flicker Animation (Candle light changing) */
+@keyframes flicker {
+    0% {
+        background: #FFD700; /* Gold */
+        box-shadow: 0 0 10px 2px rgba(255, 255, 0, 0.8); /* Yellow glow */
+    }
+    100% {
+        background: #FFA500; /* Orange */
+        box-shadow: 0 0 8px 1px rgba(255, 165, 0, 0.6); /* Orange glow */
+    }
+}
+
+/* Flame (Added for better effect) */
+.candle::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: calc(50% - 3px);
+    width: 6px;
+    height: 12px;
+    background: orange;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    animation: blow 300ms 3s ease-in forwards; /* Blow out animation */
+}
+
+/* Message Display */
+.message {
+    position: absolute;
+    bottom: -60px; /* Position below the cake */
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    color: #4a235a; /* Darker color */
+    text-shadow: 2px 2px #fff;
+    opacity: 0; /* Initially hidden */
+    animation: fadeIn 500ms 2s forwards; /* Fade in after cake drops */
+}
+
+/* Blow Out Animation */
+@keyframes blow {
+    to {
+        height: 0;
+        opacity: 0;
+    }
+}
+
+/* Message Fade In Animation */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+</style>
+</head>
+
+<body>
+<div class="cake-container">
+    <div class="cake">
+        <div class="candle"></div>
+    </div>
+    <div class="message">Happy Birthday!</div>
+</div>
+</body>
+</html>
