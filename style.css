@@ -1,0 +1,121 @@
+body 
+{
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+h1, h2, h3 
+{
+    color: #333333;
+    text-align: center;
+}
+
+p 
+{
+    color: #666666;
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+nav 
+{
+    background-color: #333333;
+    padding: 15px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+nav a 
+{
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    padding: 5px 10px;
+}
+
+nav a:hover 
+{
+    color: #ff9933;
+}
+
+.menu 
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.category 
+{
+    flex: 1;
+    min-width: 300px;
+    max-width: 380px;
+    background-color: white;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.category h3 
+{
+    color: #ff9933;
+    border-bottom: 2px solid #ff9933;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.dish 
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 15px 0;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.dish h4 
+{
+    color: #ff9933;
+    margin: 0;
+    flex: 1;
+    text-align: left;
+    padding: 20px;
+}
+
+.dish p 
+{
+    color: #666666;
+    margin: 5px 0;
+    flex: 2;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.dish .price 
+{
+    color: #ff9933;
+    font-weight: bold;
+    flex: 0 0 80px;
+    text-align: right;
+}
+.dish-image 
+{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 15px;
+}
+.contact 
+{
+    text-align: center;
+    background-color: white;
+    padding: 30px 20px;
+    margin-top: 40px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
